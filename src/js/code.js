@@ -123,7 +123,7 @@ function initApp(){
 }
 
 
-function runAlgoRithmDikstra( sommetDepart , sommetFin ){
+function runAlgoRithmDijkstra( sommetDepart , sommetFin ){
     
     map = map.sort((a,b)=>{
         if(a.nom>b.nom){
@@ -270,7 +270,7 @@ function setNewPointOrRunAlgo(Point2){
     if(Point1){
         if(Point1 === Point2){return ;}
         $(`#ptn_${Point2.nom}`).addClass('stoping_section'); 
-        runAlgoRithmDikstra(Point1,Point2);
+        runAlgoRithmDijkstra(Point1,Point2);
         Point1 = null;
     }else{
         $('.stoping_section').removeClass('stoping_section');
@@ -632,5 +632,5 @@ map = [
 // les points de a => z si non la direction de voyage sera ironne
 
 initApp();
-runAlgoRithmDikstra(A,C);
+runAlgoRithmDijkstra(A,C);
 
